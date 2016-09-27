@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A96668251D99D1F500D38BBB /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96668241D99D1F500D38BBB /* SettingsController.swift */; };
+		A96668271D9A145900D38BBB /* signininitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96668261D9A145900D38BBB /* signininitialController.swift */; };
+		A96668291D9A188900D38BBB /* signinTroubleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96668281D9A188900D38BBB /* signinTroubleController.swift */; };
+		A966682B1D9A1AAD00D38BBB /* Settings2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A966682A1D9A1AAD00D38BBB /* Settings2Controller.swift */; };
 		A9FE2E611D98746100C93366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE2E601D98746100C93366 /* AppDelegate.swift */; };
 		A9FE2E631D98746100C93366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE2E621D98746100C93366 /* ViewController.swift */; };
 		A9FE2E661D98746100C93366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FE2E641D98746100C93366 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A96668241D99D1F500D38BBB /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		A96668261D9A145900D38BBB /* signininitialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signininitialController.swift; sourceTree = "<group>"; };
+		A96668281D9A188900D38BBB /* signinTroubleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signinTroubleController.swift; sourceTree = "<group>"; };
+		A966682A1D9A1AAD00D38BBB /* Settings2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings2Controller.swift; sourceTree = "<group>"; };
 		A9FE2E5D1D98746100C93366 /* Week1-Dropbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week1-Dropbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FE2E601D98746100C93366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9FE2E621D98746100C93366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,7 @@
 				A9FE2E601D98746100C93366 /* AppDelegate.swift */,
 				A9FE2E621D98746100C93366 /* ViewController.swift */,
 				A9FE2E641D98746100C93366 /* Main.storyboard */,
+				A966682A1D9A1AAD00D38BBB /* Settings2Controller.swift */,
 				A9FE2E671D98746100C93366 /* Assets.xcassets */,
 				A9FE2E691D98746100C93366 /* LaunchScreen.storyboard */,
 				A9FE2E6C1D98746100C93366 /* Info.plist */,
@@ -80,6 +89,9 @@
 				A9FE2E7A1D98A18C00C93366 /* SignupController.swift */,
 				A9FE2E7D1D98A37300C93366 /* SigninController.swift */,
 				A9FE2E811D98AE4300C93366 /* termsController.swift */,
+				A96668241D99D1F500D38BBB /* SettingsController.swift */,
+				A96668261D9A145900D38BBB /* signininitialController.swift */,
+				A96668281D9A188900D38BBB /* signinTroubleController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -156,8 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96668251D99D1F500D38BBB /* SettingsController.swift in Sources */,
 				A9FE2E7B1D98A18C00C93366 /* SignupController.swift in Sources */,
+				A96668291D9A188900D38BBB /* signinTroubleController.swift in Sources */,
+				A966682B1D9A1AAD00D38BBB /* Settings2Controller.swift in Sources */,
 				A9FE2E821D98AE4300C93366 /* termsController.swift in Sources */,
+				A96668271D9A145900D38BBB /* signininitialController.swift in Sources */,
 				A9FE2E801D98A4CF00C93366 /* NewAccountController.swift in Sources */,
 				A9FE2E7E1D98A37300C93366 /* SigninController.swift in Sources */,
 				A9FE2E631D98746100C93366 /* ViewController.swift in Sources */,
@@ -321,6 +337,7 @@
 				A9FE2E711D98746100C93366 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

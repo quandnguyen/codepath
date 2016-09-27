@@ -1,14 +1,15 @@
 //
-//  termsController.swift
+//  signininitialController.swift
 //  Week1-Dropbox
 //
-//  Created by Nguyen, Quan on 9/25/16.
+//  Created by Nguyen, Quan on 9/26/16.
 //  Copyright © 2016 Nguyen, Quan. All rights reserved.
 //
 
 import UIKit
 
-class termsController: UIViewController {
+class signininitialController: UIViewController {
+    @IBOutlet weak var fillout: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +22,6 @@ class termsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneButton(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-        
-
-
-
-    }
 
     /*
     // MARK: - Navigation
