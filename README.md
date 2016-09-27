@@ -11,5 +11,8 @@ Challenges:
 - Getting used to creating a new swift file for every screen that has code
 - Understanding where to insert code in the swift file
 - Figuring out what goes wrong by doing debugging 
+- Sometime I couldn't find the bug and had to delete the viewController to start from scratch 
+
+Walkthrough of user stories: 
 
 ![Video Walkthrough](https://github.com/quandnguyen/codepath/blob/master/Week1-Dropbox/week1-dropbox.gif) 
