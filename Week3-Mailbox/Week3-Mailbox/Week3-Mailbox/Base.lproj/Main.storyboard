@@ -18,14 +18,6 @@
                                 <frame key="frameInset" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list" id="7ID-5V-Xsv" userLabel="list options">
-                                <frame key="frameInset" width="375" height="668"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reschedule" id="c2J-fd-5aa" userLabel="reschedule options">
-                                <frame key="frameInset" width="375" height="668"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="LOL-Ny-kDs">
                                 <frame key="frameInset" minY="66"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,45 +30,78 @@
                                         <rect key="frame" x="0.0" y="38" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="feed" id="jCU-tE-VTl">
-                                        <rect key="frame" x="0.0" y="184" width="375" height="1399"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="lwm-Y6-3i7" userLabel="bg color view">
+                                        <rect key="frame" x="0.0" y="85" width="491" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <color key="backgroundColor" red="0.78558573300000001" green="0.78558573300000001" blue="0.78558573300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="delete_icon" id="bfc-Rr-d0F" userLabel="delete icon view">
+                                        <rect key="frame" x="100" y="125" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="archive_icon" id="W6N-bo-Vlo" userLabel="archive icon view">
+                                        <rect key="frame" x="25" y="125" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="later_icon" id="AxL-Rg-rXp" userLabel="later icon view">
+                                        <rect key="frame" x="315" y="125" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="list_icon" id="4XI-7S-aHS" userLabel="list icon view">
+                                        <rect key="frame" x="250" y="125" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" misplaced="YES" id="8Gq-aK-6RF" userLabel="Message View">
                                         <rect key="frame" x="0.0" y="85" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="later_icon" id="AxL-Rg-rXp">
-                                                <frame key="frameInset" minX="307" minY="18" width="60" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.89995091623036649" green="0.81676783908297679" blue="0.29357552641802082" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="archive_icon" id="W6N-bo-Vlo">
-                                                <frame key="frameInset" minX="8" minY="19" width="60" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.89995091623036649" green="0.26094718237627001" blue="0.2011270901028912" alpha="1" colorSpace="calibratedRGB"/>
-                                            </imageView>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="message" id="bAB-hO-KE2">
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="message" id="bAB-hO-KE2">
                                                 <frame key="frameInset" width="375" height="98"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <gestureRecognizers/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.89995091620000001" green="0.81676783909999995" blue="0.29357552640000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="RBK-I5-jJW" appends="YES" id="dcC-yj-sg8"/>
                                         </connections>
                                     </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="feed" id="jCU-tE-VTl">
+                                        <rect key="frame" x="0.0" y="182" width="375" height="1399"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="reschedule" id="c2J-fd-5aa" userLabel="reschedule options">
+                                <frame key="frameInset" width="375" height="668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ToI-EQ-7jd" appends="YES" id="cVa-oi-kg2"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list" id="7ID-5V-Xsv" userLabel="list options">
+                                <frame key="frameInset" width="375" height="668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="31g-LA-sS9" appends="YES" id="psm-er-n8h"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1648"/>
                     <connections>
+                        <outlet property="archiveIconView" destination="W6N-bo-Vlo" id="bjX-ru-Bcm"/>
+                        <outlet property="bgColorView" destination="lwm-Y6-3i7" id="l1F-tP-GNU"/>
+                        <outlet property="deleteIconView" destination="bfc-Rr-d0F" id="KO3-AH-Qq5"/>
+                        <outlet property="laterIconView" destination="AxL-Rg-rXp" id="b6a-bV-Ccj"/>
+                        <outlet property="listIconView" destination="4XI-7S-aHS" id="dgY-ge-kAA"/>
+                        <outlet property="listView" destination="7ID-5V-Xsv" id="1av-Ck-J8A"/>
                         <outlet property="messageView" destination="8Gq-aK-6RF" id="7Sf-2I-KrH"/>
+                        <outlet property="rescheduleView" destination="c2J-fd-5aa" id="2DN-Ad-eLU"/>
                         <outlet property="scrollView" destination="LOL-Ny-kDs" id="Rvk-ck-L2O"/>
                     </connections>
                 </viewController>
@@ -86,16 +111,28 @@
                         <action selector="didPanMessage:" destination="vJb-oG-aX5" id="XU3-O9-zJg"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="ToI-EQ-7jd">
+                    <connections>
+                        <action selector="didTapReschedule:" destination="vJb-oG-aX5" id="a4U-w9-Hbw"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="31g-LA-sS9">
+                    <connections>
+                        <action selector="didTapListOptions:" destination="vJb-oG-aX5" id="jgN-ZF-jiT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="573.5" y="643"/>
         </scene>
     </scenes>
     <resources>
         <image name="archive_icon" width="25" height="25"/>
+        <image name="delete_icon" width="25" height="25"/>
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="later_icon" width="25" height="25"/>
         <image name="list" width="320" height="568"/>
+        <image name="list_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
         <image name="reschedule" width="320" height="568"/>
