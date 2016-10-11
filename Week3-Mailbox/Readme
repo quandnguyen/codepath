@@ -1,0 +1,18 @@
+# Week 3 Homework: Mailbox
+
+This is a copy of the Mailbox app
+
+Time spent: roughly 18 hours spent on week 1 homework
+
+Required steps completed: all
+Optional steps completed: 3/6. Optional: Panning from the edge should reveal the menu, If the menu is being revealed when the user lifts their finger, it should continue revealing, If the menu is being hidden when the user lifts their finger, it should continue hiding
+In addition, I made the hiding main screen pannable so that you can swipe left to bring the screen back. 
+Challenges: 
+- I had a hard time understanding the concept of creating vars and attaching them to the main view, as well as the views you want to interact with. But finally I got it!
+- The concept of [dot] [dot] to drill down into properties 
+- Nesting if else statements inside each other makes it hard to read the code 
+- Xcode gave threw me some nasty bugs I didn't know how to solve. I had to create another project from scratch to bypass it. 
+
+Walkthrough of user stories: 
+
+![Video Walkthrough](https://github.com/quandnguyen/codepath/blob/master/Week1-Dropbox/week1-dropbox.gif) 
