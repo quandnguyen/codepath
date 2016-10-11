@@ -63,5 +63,6 @@ Challenges:
 
 ### Video Walkthrough 
 
-Here's a walkthrough of implemented user stories:
+[Here's a walkthrough of implemented user stories:]
+
 <img src='https://github.com/quandnguyen/codepath/blob/master/Week3-Mailbox/week3-homework.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
