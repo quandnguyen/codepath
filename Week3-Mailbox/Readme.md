@@ -53,10 +53,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ### Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
-
 <img src='https://github.com/quandnguyen/codepath/blob/master/Week3-Mailbox/week3-homework.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-(https://github.com/quandnguyen/codepath/blob/master/Week3-Mailbox/week3-homework.gif)
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 
 ## Notes
 
@@ -68,6 +66,5 @@ Challenges:
 - Nesting if else statements inside each other makes it hard to read the code 
 - Xcode gave threw me some nasty bugs I didn't know how to solve. I had to create another project from scratch to bypass it. 
 
-Walkthrough of user stories: 
-<img src='https://github.com/quandnguyen/codepath/blob/master/Week3-Mailbox/week3-homework.gif?raw=true' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
