@@ -309,6 +309,7 @@
 				A92F270F1DA5E43E00CABF44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

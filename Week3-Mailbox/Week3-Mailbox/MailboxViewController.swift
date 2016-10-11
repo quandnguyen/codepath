@@ -18,12 +18,31 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var listView: UIImageView!
     @IBOutlet var listIconView: UIImageView!
     @IBOutlet var deleteIconView: UIImageView!
+    @IBOutlet weak var feedView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+
+    
     
     var messageOriginalCenter: CGPoint!
     var messageOffset: CGFloat!
     var messageCenter: CGPoint!
     var messageLeft: CGPoint!
     var messageRight: CGPoint!
+    
+    var feedViewOriginalCenter: CGPoint!
+    var feedViewOffset: CGFloat!
+    var feedViewCenter: CGPoint!
+    var feedViewTop: CGPoint!
+    
+    var containerOriginalCenter: CGPoint!
+    var containerOffset: CGFloat!
+    var containerLeft: CGPoint!
+    var containerRight: CGPoint!
+    
+    
+    
+
+    
 
     let grayColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
     let yellowColor = UIColor(red: 255/255.0, green: 195/255.0, blue: 0/255.0, alpha: 1.0)
@@ -42,7 +61,22 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         messageLeft = CGPoint(x: messageView.center.x - messageOffset,y: messageView.center.y)
         messageRight = CGPoint(x: messageView.center.x + messageOffset,y: messageView.center.y)
         
+        feedViewCenter = feedView.center
 
+        containerOffset = 330
+        containerLeft = containerView.center
+        containerRight = CGPoint(x: containerView.center.x + containerOffset, y: containerView.center.y)
+        
+        
+        let screenEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(didScreenEdgePan(sender:)))
+        
+        // Configure the screen edges you want to detect.
+        screenEdgePanGestureRecognizer.edges = UIRectEdge.left
+        
+        // Attach the screen edge pan gesture recognizer to some view.
+        containerView.isUserInteractionEnabled = true
+        containerView.addGestureRecognizer(screenEdgePanGestureRecognizer)
+        
         // Do any additional setup after loading the view.
 
     }
@@ -64,17 +98,37 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
             
             if translation.x < -260 {
                 self.bgColorView.backgroundColor = self.blueColor
+                listIconView.center.x = messageView.frame.origin.x + messageView.frame.size.width + 30
+                listIconView.alpha = 1
+                laterIconView.alpha = 0
+                archiveIconView.alpha = 0
+                deleteIconView.alpha = 0
             } else {
                 if translation.x < -60 {
                     self.bgColorView.backgroundColor = self.yellowColor
+                    laterIconView.center.x = messageView.frame.origin.x + messageView.frame.size.width + 30
+                    listIconView.alpha = 0
+                    laterIconView.alpha = 1
+                    archiveIconView.alpha = 0
+                    deleteIconView.alpha = 0
+                    
                 } else {
                     if translation.x > 260 {
                         self.bgColorView.backgroundColor = self.redColor
-                        
+                        deleteIconView.center.x = messageView.frame.origin.x - 30
+                        listIconView.alpha = 0
+                        laterIconView.alpha = 0
+                        archiveIconView.alpha = 0
+                        deleteIconView.alpha = 1
                         print ("red")
                     } else {
                         if translation.x > 60 {
                             self.bgColorView.backgroundColor = self.greenColor
+                            archiveIconView.center.x = messageView.frame.origin.x - 30
+                            listIconView.alpha = 0
+                            laterIconView.alpha = 0
+                            archiveIconView.alpha = 1
+                            deleteIconView.alpha = 0
                             
                             print ("green")
 
@@ -107,7 +161,7 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
                                     
                         }, completion: nil)
                     UIView.animate(withDuration:0.8, delay:0, animations: {
-                                    
+                        
                             self.rescheduleView.alpha = 1
                         })
 
@@ -149,24 +203,113 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
+    
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
 
 
     @IBAction func didTapReschedule(_ sender: UITapGestureRecognizer) {
         self.rescheduleView.alpha = 0
-        UIView.animate(withDuration:0.4,
-                       animations: { () -> Void in
-                        self.messageView.center = self.messageCenter
+        UIView.animate(withDuration:0.4, delay: 0, options: [], animations: {
+
+            self.feedView.center.y -= self.bgColorView.frame.height
             }, completion: nil)
+        UIView.animate(withDuration:0.4, delay: 0.4, options: [], animations: {
+            
+            self.feedView.center.y += self.bgColorView.frame.height
+            }, completion: nil)
+        delay(0.4) {
+            self.messageView.center = self.messageCenter
+        }
+
     }
     
     
     @IBAction func didTapListOptions(_ sender: UITapGestureRecognizer) {
         self.listView.alpha = 0
-        UIView.animate(withDuration:0.4,
+        //UIView.animate(withDuration:0.4, delay: 0, options: [.autoreverse], animations: {
+            // different method to animate with the same result
+            //}, completion: nil)
+        UIView.animate(withDuration:0.4, delay: 0, options:[] ,
                        animations: { () -> Void in
-                        self.messageView.center = self.messageCenter
+                        self.feedView.center.y -= self.bgColorView.frame.height
+                        
             }, completion: nil)
+        UIView.animate(withDuration:0.4, delay: 0.4, options:[] ,
+                       animations: { () -> Void in
+                        self.feedView.center.y += self.bgColorView.frame.height
+                        
+            }, completion: nil)
+
+        delay(0.4) {
+            self.messageView.center = self.messageCenter
+        }
         
+    }
+    
+    func didScreenEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
+        // Do something when the user does a screen edge pan.
+        let velocity = sender.velocity(in: view)
+        let translation = sender.translation(in: view)
+        
+        if sender.state == .began {
+            containerOriginalCenter = containerView.center
+            print("Gesture began")
+        } else if sender.state == .changed {
+            containerView.center = CGPoint(x: containerOriginalCenter.x + translation.x, y: containerOriginalCenter.y)
+            
+            print("Gesture is changing")
+        } else if sender.state == .ended {
+            if velocity.x > 0 {
+                UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options:[] ,
+                               animations: { () -> Void in
+                                self.containerView.center = self.containerRight
+                                
+                    }, completion: nil)
+            } else {
+                UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options:[] ,
+                               animations: { () -> Void in
+                                self.containerView.center = self.containerLeft
+                                
+                    }, completion: nil)
+            }
+        
+            print("Gesture ended")
+        }
+
+    }
+   
+    @IBAction func didPanContainer(_ sender: UIPanGestureRecognizer) {
+        let velocity = sender.velocity(in: view)
+        let translation = sender.translation(in: view)
+        
+        if sender.state == .began {
+            containerOriginalCenter = containerView.center
+            print("Gesture began")
+        } else if sender.state == .changed {
+            containerView.center = CGPoint(x: containerOriginalCenter.x + translation.x, y: containerOriginalCenter.y)
+            
+            print("Gesture is changing")
+        } else if sender.state == .ended {
+            if velocity.x < 0 {
+                UIView.animate(withDuration:0.4, delay: 0, options:[] ,
+                               animations: { () -> Void in
+                                self.containerView.center = self.containerLeft
+                                
+                    }, completion: nil)
+            } else {
+                UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options:[] ,
+                               animations: { () -> Void in
+                                self.containerView.center = self.containerRight
+                                
+                    }, completion: nil)
+                
+            }
+            
+            print("Gesture ended")
+        }
     }
     /*
     // MARK: - Navigation
