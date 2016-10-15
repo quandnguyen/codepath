@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //1: create content view outlet
+
     @IBOutlet weak var contentView: UIView!
     
     //2: create IBOutlet array named buttons to hold your tab bar buttons. drag all the buttons to the array
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         //4a: Link ViewController Vars to the ViewControllers in the Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -56,7 +58,7 @@ class ViewController: UIViewController {
     @IBAction func didPressTab(_ sender: UIButton) {
         //7a: keep track of the previous button that was pressed
         let previousIndex = selectedIndex
-        
+        print ("did press")
         //7b: set seletedIndex to the tag value of whichever button was tapped
         selectedIndex = sender.tag
         
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
         previousVC.willMove(toParentViewController: nil)
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParentViewController()
+        print(previousVC)
         
         //9a: access your current selected button and set it to the selected state
         sender.isSelected = true

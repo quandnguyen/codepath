@@ -14,17 +14,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" id="XoY-Sm-tJa" userLabel="Content View">
-                                <frame key="frameInset" width="375" height="609"/>
+                            <view contentMode="scaleToFill" misplaced="YES" id="Nbb-kH-ShJ">
+                                <frame key="frameInset" width="375" height="625"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="TabBarViewController" id="NKy-p0-p0G" userLabel="Tab Bar View Controller">
-                                <frame key="frameInset" minY="608" width="375" height="60"/>
+                                <frame key="frameInset" minY="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7So-Kv-dpb" userLabel="Home Button">
-                                        <frame key="frameInset" minX="31" minY="12" width="35" height="35"/>
+                                        <frame key="frameInset" minX="31" minY="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon"/>
                                         <state key="selected" image="home_selected_icon"/>
@@ -32,16 +32,16 @@
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yNy-aq-Fbm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sNp-id-A5a" userLabel="Compose Button">
-                                        <frame key="frameInset" minX="162" minY="12" width="50" height="35"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sNp-id-A5a" userLabel="Compose Button">
+                                        <frame key="frameInset" minX="162" minY="4" width="50" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button"/>
                                         <connections>
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qv1-Is-fN9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DER-km-uXH" userLabel="Account Button">
-                                        <frame key="frameInset" minX="243" minY="12" width="35" height="35"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DER-km-uXH" userLabel="Account Button">
+                                        <frame key="frameInset" minX="243" minY="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon"/>
                                         <state key="selected" image="account_selected_icon"/>
@@ -49,8 +49,8 @@
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9RI-sF-VTY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GcG-fw-K6o" userLabel="Trending Button">
-                                        <frame key="frameInset" minX="310" minY="12" width="35" height="35"/>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GcG-fw-K6o" userLabel="Trending Button">
+                                        <frame key="frameInset" minX="310" minY="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon"/>
                                         <state key="selected" image="trending_selected_icon"/>
@@ -58,8 +58,8 @@
                                             <action selector="didPressTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="enR-dQ-guA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gq4-FS-kCD" userLabel="Search Button">
-                                        <frame key="frameInset" minX="97" minY="12" width="35" height="35"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gq4-FS-kCD" userLabel="Search Button">
+                                        <frame key="frameInset" minX="97" minY="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon"/>
                                         <state key="selected" image="search_selected_icon"/>
@@ -74,7 +74,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="XoY-Sm-tJa" id="BGO-4v-laJ"/>
+                        <outlet property="contentView" destination="Nbb-kH-ShJ" id="5Dy-zl-8Ci"/>
                         <outletCollection property="buttons" destination="7So-Kv-dpb" collectionClass="NSMutableArray" id="t5J-zf-e8v"/>
                         <outletCollection property="buttons" destination="gq4-FS-kCD" collectionClass="NSMutableArray" id="f59-3L-fXu"/>
                         <outletCollection property="buttons" destination="sNp-id-A5a" collectionClass="NSMutableArray" id="sAa-hO-3Be"/>
@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="home" id="rbh-gP-mrY" userLabel="background">
-                                <frame key="frameInset" width="375" height="611"/>
+                                <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="home_overlay" id="RqW-QC-bTm">
@@ -103,7 +103,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="home_spinner" id="b87-iB-s36">
-                                <frame key="frameInset" minX="114" minY="202" width="146" height="146"/>
+                                <frame key="frameInset" minX="114" minY="225" width="146" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="search_feed" id="FxN-1L-GDM">
-                                <frame key="frameInset" minX="1" width="374" height="609"/>
+                                <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -138,7 +138,7 @@
         <scene sceneID="ceb-jR-qNv">
             <objects>
                 <viewController storyboardIdentifier="composeViewID" id="WBj-VQ-y0b" userLabel="Compose View Controller" customClass="ComposeViewController" customModule="Week_4___Tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.65000000000000002" contentMode="scaleToFill" id="9KF-92-YAc">
+                    <view key="view" contentMode="scaleToFill" id="9KF-92-YAc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -194,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="account" id="SH7-LM-iWJ">
-                                <frame key="frameInset" width="375" height="615"/>
+                                <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -213,13 +213,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1426"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="5eq-8b-z5w">
-                                <frame key="frameInset" width="375" height="1426"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="56h-tC-nDg">
+                                <frame key="frameInset" width="375" height="668"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="trending_feed" id="ww4-qh-75D">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="trending_feed" id="IVy-EO-XrT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1426"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
@@ -229,8 +229,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1426"/>
                     <connections>
-                        <outlet property="imageView" destination="ww4-qh-75D" id="aDq-Y2-iSb"/>
-                        <outlet property="scrollView" destination="5eq-8b-z5w" id="W98-h8-XXW"/>
+                        <outlet property="imageView" destination="IVy-EO-XrT" id="HDD-DL-23f"/>
+                        <outlet property="scrollView" destination="56h-tC-nDg" id="bPj-Po-mh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kod-ve-lSY" userLabel="First Responder" sceneMemberID="firstResponder"/>

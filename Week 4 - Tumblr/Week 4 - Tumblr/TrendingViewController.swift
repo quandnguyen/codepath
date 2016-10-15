@@ -10,13 +10,12 @@ import UIKit
 
 class TrendingViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
 
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scrollView.contentSize = self.imageView.frame.size
-        
+        scrollView.contentSize = imageView.frame.size 
         
         // Do any additional setup after loading the view.
     }
