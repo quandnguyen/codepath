@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //1: create content view outlet
+    @IBOutlet weak var bobbingView: UIImageView!
 
     @IBOutlet weak var contentView: UIView!
     
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     //3a: create variables to hold each ViewController associated with a tab
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
-    var composeViewController: UIViewController!
+    //var composeViewController: UIViewController!
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
     
@@ -30,8 +31,26 @@ class ViewController: UIViewController {
     //3c: Define a variable to keep track of the tab button that is selected
     var selectedIndex: Int = 0
     
+    
+    var bobbingOriginalCenter: CGPoint!
+    var bobbingOffset: CGFloat!
+    var bobbingCenter: CGPoint!
+    var bobbingTop: CGPoint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bobbingOffset = 5
+        bobbingCenter = bobbingView.center
+        bobbingTop = CGPoint(x: bobbingView.center.x, y: bobbingView.center.y - bobbingOffset)
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse],
+                       animations: {
+                    self.bobbingView.center = self.bobbingTop
+        }, completion: nil)
+
 
         //4a: Link ViewController Vars to the ViewControllers in the Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,14 +58,13 @@ class ViewController: UIViewController {
         //4b: Instantiate each ViewController by referencing storyboard and the particular ViewController's Storyboard ID
         homeViewController = storyboard.instantiateViewController(withIdentifier: "homeViewID")
         searchViewController = storyboard.instantiateViewController(withIdentifier: "searchViewID")
-        composeViewController = storyboard.instantiateViewController(withIdentifier: "composeViewID")
+        //composeViewController = storyboard.instantiateViewController(withIdentifier: "composeViewID")
         accountViewController = storyboard.instantiateViewController(withIdentifier: "accountViewID")
         trendingViewController = storyboard.instantiateViewController(withIdentifier: "trendingViewID")
         
-        print ("all views created")
         
         //5: add each ViewController to your viewControllers array
-        viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
+        viewControllers = [homeViewController, searchViewController, accountViewController, trendingViewController]
         
         //10: set the initial tab when the app starts
         buttons[selectedIndex].isSelected = true
@@ -81,18 +99,23 @@ class ViewController: UIViewController {
         let vc = viewControllers[selectedIndex]
         
         //9c: add the new viewcontroller
-        addChildViewController(vc)
         
-        //9d: adjust the size of the ViewController view you are adding to match the contentView of your tabBarViewController and add it as a subView of the contentView
+        addChildViewController(vc)
         vc.view.frame = contentView.bounds
+        //9d: adjust the size of the ViewController view you are adding to match the contentView of your tabBarViewController and add it as a subView of the contentView
+        
         contentView.addSubview(vc.view)
         
         //9e: call the viewDidAppear method of the ViewController you are adding using didMove(toParentViewController: self)
         vc.didMove(toParentViewController: self)
         
+        if vc == viewControllers [1] {
+            bobbingView.alpha = 0
+        } else {
+            bobbingView.alpha = 1
+        }
+        
     }
-    
-    
 
 
 }
