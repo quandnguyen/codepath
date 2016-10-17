@@ -130,9 +130,17 @@
                                 <frame key="frameInset"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-1" id="9f5-ga-Tei">
+                                <frame key="frameInset" minX="164" minY="343" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.2627450980392157" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingView" destination="9f5-ga-Tei" id="oZW-Xo-8y7"/>
+                        <outlet property="searchFeedView" destination="FxN-1L-GDM" id="PJs-Kn-iaY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19I-Sj-owf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,27 +168,27 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="text_icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rbu-fb-9aY" userLabel="Photo">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rbu-fb-9aY" userLabel="Photo">
                                         <frame key="frameInset" minX="152" minY="183" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="photo_icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3vc-w9-hq5" userLabel="Quote">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3vc-w9-hq5" userLabel="Quote">
                                         <frame key="frameInset" minX="267" minY="183" width="75" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="quote_icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TDc-zP-AjW" userLabel="Link">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TDc-zP-AjW" userLabel="Link">
                                         <frame key="frameInset" minX="33" minY="314" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="link_icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x9e-u5-xfY" userLabel="Chat">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x9e-u5-xfY" userLabel="Chat">
                                         <frame key="frameInset" minX="152" minY="314" width="75" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="chat_icon"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wai-Zx-9TQ" userLabel="Video">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wai-Zx-9TQ" userLabel="Video">
                                         <frame key="frameInset" minX="267" minY="315" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="video_icon"/>
@@ -276,6 +284,7 @@
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
