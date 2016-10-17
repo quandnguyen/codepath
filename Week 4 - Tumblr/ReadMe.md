@@ -31,7 +31,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/quandnguyen/codepath/blob/master/Week%204%20-%20Tumblr/week3%20-%20Tumblr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/quandnguyen/codepath/blob/master/Week%204%20-%20Tumblr/week4%20-%20Tumblr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
