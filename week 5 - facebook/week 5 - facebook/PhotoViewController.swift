@@ -44,15 +44,13 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = UIColor(white:0, alpha: 0)
-        }
 
     }
 
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = UIColor(white:0, alpha: 0)
             self.doneButton.alpha = 0
             self.photoActions.alpha = 0
         }
@@ -63,7 +61,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         
         let scrollY = scrollView.contentOffset.y
         
-        if scrollY < -35 {
+        if scrollY < -50 {
             dismiss(animated: true, completion: nil)
             self.view.backgroundColor = UIColor(white:0, alpha: 0)
         } else {
@@ -77,7 +75,7 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         UIView.animate(withDuration: 0.5) {
-//            self.view.backgroundColor = UIColor(white:0, alpha: 1)
+            self.view.backgroundColor = UIColor(white:0, alpha: 1)
         }
     }
     

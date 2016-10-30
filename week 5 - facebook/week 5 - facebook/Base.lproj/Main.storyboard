@@ -259,12 +259,12 @@
                                 <frame key="frameInset" minY="615" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="VVU-a4-Ujk">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" maximumZoomScale="3" id="VVU-a4-Ujk">
                                 <frame key="frameInset" minY="74" width="375" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="YMc-G3-bg3">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="525"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
