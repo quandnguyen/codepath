@@ -13,10 +13,6 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var wedding1View: UIImageView!
-    @IBOutlet weak var wedding2View: UIImageView!
-    @IBOutlet weak var wedding3View: UIImageView!
-    
     var selectedImageView: UIImageView!
     
     var fadeTransition: FadeTransition!
@@ -35,7 +31,7 @@ class FeedViewController: UIViewController {
     
     
     @IBAction func didTapPhoto(_ sender: UITapGestureRecognizer) {
-        selectedImageView = sender.view as!UIImageView
+        selectedImageView = sender.view as! UIImageView
         
         performSegue(withIdentifier: "feedToPhoto", sender: nil)
 

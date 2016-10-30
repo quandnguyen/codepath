@@ -9,38 +9,80 @@
 import UIKit
 
 class PhotoViewController: UIViewController, UIScrollViewDelegate {
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
     
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
+    @IBOutlet weak var photoActions: UIImageView!
+
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = imageView.frame.size
-        imageView.image = image
         
+        scrollView.contentSize = imageView.frame.size
         scrollView.delegate = self
+        self.view.backgroundColor = UIColor(white: 0, alpha: 1)
+        
+        imageView.image = image
 
-        // Do any additional setup after loading the view.
+    }
+    
+    
+
+    @IBAction func didTapDone(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.5) {
+            self.doneButton.isHidden = true
+            self.photoActions.isHidden = true
+        }
+
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        
-        
-        // This method is called as the user scrolls
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = UIColor(white:0, alpha: 0)
+        }
+
     }
+
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
+        UIView.animate(withDuration: 0.5) {
+            self.doneButton.alpha = 0
+            self.photoActions.alpha = 0
+        }
+
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // This method is called right as the user lifts their finger
+        
+        let scrollY = scrollView.contentOffset.y
+        
+        if scrollY < -35 {
+            dismiss(animated: true, completion: nil)
+            self.view.backgroundColor = UIColor(white:0, alpha: 0)
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.view.backgroundColor = UIColor(white:0, alpha: 1)
+                self.doneButton.alpha = 1
+                self.photoActions.alpha = 1
+                
+            }
+        }
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.5) {
+//            self.view.backgroundColor = UIColor(white:0, alpha: 1)
+        }
     }
     
-    @IBAction func didTapDone(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
 
     /*
