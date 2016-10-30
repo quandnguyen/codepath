@@ -15,7 +15,7 @@ Time spent: `<21>`
 
 #### Optional
 
-- [ ] The full screen photo should be zoomable.
+- [x] The full screen photo should be zoomable.
 - [ ] The user should be able to page through the other photos in full screen mode.
 
 #### The following **additional** features are implemented:
