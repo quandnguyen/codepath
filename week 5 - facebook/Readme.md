@@ -2,7 +2,7 @@
 
 The purpose of this homework is to leverage animations and gestures to transition between screens. We're going to use the techniques from this week to implement some interactions in Facebook.
 
-Time spent: `<16>`
+Time spent: `<21>`
 
 ### Features
 
@@ -10,8 +10,8 @@ Time spent: `<16>`
 
 - [x] Tapping on a photo in the news feed should expand the photo full screen.
 - [x] Tapping the Done button should animate the photo back into its position in the news feed.
-- [ ] On scroll of the full screen photo, the background should start to become transparent, revealing the feed.
-- [ ] If the user scrolls a large amount and releases, the full screen photo should dismiss.
+- [x] On scroll of the full screen photo, the background should start to become transparent, revealing the feed.
+- [x] If the user scrolls a large amount and releases, the full screen photo should dismiss.
 
 #### Optional
 
