@@ -40,9 +40,9 @@ class LocationViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         //instantiate each ViewController by referencing storyboard and the particular ViewController's Storyboard ID
-        weatherViewController = storyboard.instantiateViewController(withIdentifier: "WeatherViewID")
-        stylesViewController = storyboard.instantiateViewController(withIdentifier: "StylesViewID")
-        tipsViewController = storyboard.instantiateViewController(withIdentifier: "TipsViewID")
+        weatherViewController = storyboard.instantiateViewController(withIdentifier: "WeatherControllerID")
+        stylesViewController = storyboard.instantiateViewController(withIdentifier: "StylesControllerID")
+        tipsViewController = storyboard.instantiateViewController(withIdentifier: "TipsControllerID")
         
         //add each ViewController to your viewControllers array
         viewControllers = [weatherViewController, stylesViewController, tipsViewController]
