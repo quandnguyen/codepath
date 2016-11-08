@@ -8,10 +8,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class PhotoCollectionViewController: UICollectionViewController {
+    private let reuseIdentifier = "Cell"
     
+    var selectedImageView: UIImageView!
+    var fadeTransition: FadeTransition!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,6 +73,25 @@ class PhotoCollectionViewController: UICollectionViewController {
         return cell
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        
+        let cell = sender as! PhotoCellCollectionViewCell
+        selectedImageView = cell.photoView
+        let image = cell.photoView.image
+        let destinationViewController = segue.destination as! PhotoDetailsViewController
+        destinationViewController.image = image
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.custom
+        fadeTransition = FadeTransition()
+        destinationViewController.transitioningDelegate = fadeTransition
+        fadeTransition.duration = 1.0
+        
+    }
+    
+    
+
     
 
 
