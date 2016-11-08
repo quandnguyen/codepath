@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A903E4941DCFD58000E77A72 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903E4931DCFD58000E77A72 /* PhotoViewController.swift */; };
-		A903E4971DCFEAAB00E77A72 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903E4951DCFEAAB00E77A72 /* BaseTransition.swift */; };
-		A903E4981DCFEAAB00E77A72 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903E4961DCFEAAB00E77A72 /* FadeTransition.swift */; };
-		A903E49A1DCFEAB400E77A72 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A903E4991DCFEAB400E77A72 /* Common.swift */; };
 		A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */; };
 		A970D2E11DCD9AAD008F210C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2E01DCD9AAD008F210C /* ViewController.swift */; };
 		A970D2E41DCD9AAD008F210C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A970D2E21DCD9AAD008F210C /* Main.storyboard */; };
@@ -20,14 +16,15 @@
 		A970D2F91DCDAF42008F210C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2F81DCDAF42008F210C /* WeatherViewController.swift */; };
 		A970D2FB1DCDAF61008F210C /* StylesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2FA1DCDAF61008F210C /* StylesViewController.swift */; };
 		A970D2FD1DCDAF79008F210C /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2FC1DCDAF79008F210C /* TipsViewController.swift */; };
+		A9F8814E1DD11525007BDCA8 /* PhotoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8814D1DD11525007BDCA8 /* PhotoCellCollectionViewCell.swift */; };
 		A9F8E64C1DCEA5A80003D83F /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F8E64B1DCEA5A80003D83F /* PhotoCollectionViewController.swift */; };
+		D386AFDA1DCF15D30030BE53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386AFD91DCF15D30030BE53 /* MenuViewController.swift */; };
+		D386AFDC1DCF15FD0030BE53 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386AFDB1DCF15FD0030BE53 /* FeedViewController.swift */; };
+		D386AFDE1DCF163C0030BE53 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386AFDD1DCF163C0030BE53 /* HamburgerViewController.swift */; };
+		D3C4CDFA1DD040730043FBAD /* TipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4CDF91DD040730043FBAD /* TipsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A903E4931DCFD58000E77A72 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		A903E4951DCFEAAB00E77A72 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
-		A903E4961DCFEAAB00E77A72 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
-		A903E4991DCFEAB400E77A72 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A970D2DB1DCD9AAD008F210C /* StyleCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A970D2E01DCD9AAD008F210C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +36,12 @@
 		A970D2F81DCDAF42008F210C /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		A970D2FA1DCDAF61008F210C /* StylesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylesViewController.swift; sourceTree = "<group>"; };
 		A970D2FC1DCDAF79008F210C /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		A9F8814D1DD11525007BDCA8 /* PhotoCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		A9F8E64B1DCEA5A80003D83F /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		D386AFD91DCF15D30030BE53 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D386AFDB1DCF15FD0030BE53 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		D386AFDD1DCF163C0030BE53 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		D3C4CDF91DD040730043FBAD /* TipsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsCell.swift; path = ../TipsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,15 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A903E49B1DCFF19000E77A72 /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				A903E4951DCFEAAB00E77A72 /* BaseTransition.swift */,
-				A903E4961DCFEAAB00E77A72 /* FadeTransition.swift */,
-			);
-			name = Transitions;
-			sourceTree = "<group>";
-		};
 		A970D2D21DCD9AAD008F210C = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +78,12 @@
 				A970D2F21DCDAC53008F210C /* Controllers */,
 				A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */,
 				A970D2E01DCD9AAD008F210C /* ViewController.swift */,
+				A9F8814D1DD11525007BDCA8 /* PhotoCellCollectionViewCell.swift */,
+				D3C4CDF91DD040730043FBAD /* TipsCell.swift */,
 				A970D2E21DCD9AAD008F210C /* Main.storyboard */,
+				D386AFDD1DCF163C0030BE53 /* HamburgerViewController.swift */,
+				D386AFDB1DCF15FD0030BE53 /* FeedViewController.swift */,
+				D386AFD91DCF15D30030BE53 /* MenuViewController.swift */,
 				A970D2E51DCD9AAD008F210C /* Assets.xcassets */,
 				A970D2E71DCD9AAD008F210C /* LaunchScreen.storyboard */,
 				A970D2EA1DCD9AAD008F210C /* Info.plist */,
@@ -108,9 +106,6 @@
 				A970D2FA1DCDAF61008F210C /* StylesViewController.swift */,
 				A970D2FC1DCDAF79008F210C /* TipsViewController.swift */,
 				A9F8E64B1DCEA5A80003D83F /* PhotoCollectionViewController.swift */,
-				A903E4931DCFD58000E77A72 /* PhotoViewController.swift */,
-				A903E49B1DCFF19000E77A72 /* Transitions */,
-				A903E4991DCFEAB400E77A72 /* Common.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,16 +183,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A970D2F61DCDAD64008F210C /* LocationViewController.swift in Sources */,
+				D386AFDC1DCF15FD0030BE53 /* FeedViewController.swift in Sources */,
 				A970D2F91DCDAF42008F210C /* WeatherViewController.swift in Sources */,
+				D3C4CDFA1DD040730043FBAD /* TipsCell.swift in Sources */,
 				A9F8E64C1DCEA5A80003D83F /* PhotoCollectionViewController.swift in Sources */,
 				A970D2FD1DCDAF79008F210C /* TipsViewController.swift in Sources */,
-				A903E49A1DCFEAB400E77A72 /* Common.swift in Sources */,
-				A903E4971DCFEAAB00E77A72 /* BaseTransition.swift in Sources */,
 				A970D2E11DCD9AAD008F210C /* ViewController.swift in Sources */,
-				A903E4981DCFEAAB00E77A72 /* FadeTransition.swift in Sources */,
+				A9F8814E1DD11525007BDCA8 /* PhotoCellCollectionViewCell.swift in Sources */,
 				A970D2FB1DCDAF61008F210C /* StylesViewController.swift in Sources */,
-				A903E4941DCFD58000E77A72 /* PhotoViewController.swift in Sources */,
 				A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */,
+				D386AFDE1DCF163C0030BE53 /* HamburgerViewController.swift in Sources */,
+				D386AFDA1DCF15D30030BE53 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

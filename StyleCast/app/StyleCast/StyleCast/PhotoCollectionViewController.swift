@@ -10,18 +10,24 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-var selectedImageView: UIImageView!
-var fadeTransition: FadeTransition!
-
-
-
 class PhotoCollectionViewController: UICollectionViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
+            
+            
+        //data source
+        //let photos = Photos
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -30,33 +36,6 @@ class PhotoCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    @IBAction func didTapPhoto(_ sender: UITapGestureRecognizer) {
-        selectedImageView = sender.view as! UIImageView
-        performSegue(withIdentifier: "photoSegue", sender: nil)
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        var destinationViewController = segue.destination as! PhotoDetailViewController
-//        destinationViewController.image = self.selectedImageView.image
-//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.custom
-//        fadeTransition = FadeTransition()
-//        destinationViewController.transitioningDelegate = fadeTransition
-//        fadeTransition.duration = 1.0
-//    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destinationViewController = segue.destination as! PhotoDetailViewController
-        //destinationViewController.image = self.selectedImageView.image
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.custom
-        fadeTransition = FadeTransition()
-        destinationViewController.transitioningDelegate = fadeTransition
-        fadeTransition.duration = 1.0
-    }
-    
-    
 
     /*
     // MARK: - Navigation
