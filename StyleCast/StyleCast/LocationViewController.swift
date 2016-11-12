@@ -16,13 +16,12 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var weatherButton: UIButton!
     @IBOutlet weak var stylesButton: UIButton!
     @IBOutlet weak var tipsButton: UIButton!
-    
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var tempText: UITextField!
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var locationText: UITextField!
-    @IBOutlet weak var conditionText: UITextField!
     
+    @IBOutlet weak var weatherIconView: UIImageView!
+    @IBOutlet weak var weatherConditionView: UILabel!
+    @IBOutlet weak var tempView: UILabel!
+    @IBOutlet weak var locationView: UILabel!
     
     var containerViewOriginal: CGPoint!
     var containerViewUp: CGPoint!
@@ -30,6 +29,22 @@ class LocationViewController: UIViewController {
     
     var contentViewUp: CGSize!
     var contentViewDown: CGSize!
+    
+//    var tempViewOriginal: CGRect!
+//    var tempViewUp: CGRect!
+//    var tempViewDown: CGRect!
+//    
+//    var locationViewOriginal: CGRect!
+//    var locationViewUp: CGRect!
+//    var locationViewDown: CGRect!
+//    
+//    var weatherIconViewOriginal: CGRect!
+//    var weatherIconViewUp: CGRect!
+//    var weatherIconViewDown: CGRect!
+//    
+//    var weatherConditionOriginal: CGRect!
+//    var weatherConditionUp: CGRect!
+//    var weatherConditionDown: CGRect!
     
     var tempStartingYValue: CGFloat = 0
     var tempStartingXValue: CGFloat = 0
@@ -46,6 +61,7 @@ class LocationViewController: UIViewController {
     var conditionStartingYValue: CGFloat = 0
     var conditionStartingXValue: CGFloat = 0
     var conditionStartingSize: CGFloat = 0
+    
     
     //make an array to hold tab bar buttons
     var buttons: [UIButton]!
@@ -77,23 +93,23 @@ class LocationViewController: UIViewController {
         contentViewDown = CGSize(width: view.frame.size.width, height: view.frame.size.height/2 - tabBarContainerView.frame.size.height)
         contentViewUp = CGSize(width: view.frame.size.width, height: containerView.frame.size.height - tabBarContainerView.frame.size.height)
         
-        
-        tempStartingYValue = tempText.frame.origin.y
-        tempStartingXValue = tempText.frame.origin.x
-        tempStartingSize = tempText.frame.size.width
 
         
-        iconStartingYValue = iconImageView.frame.origin.y
-        iconStartingXValue = iconImageView.frame.origin.x
-        iconStartingSize = iconImageView.frame.size.width
-
-        locationStartingYValue = locationText.frame.origin.y
-        locationStartingXValue = locationText.frame.origin.x
-        locationStartingSize = locationText.frame.size.width
+        tempStartingYValue = tempView.frame.origin.y
+        tempStartingXValue = tempView.frame.origin.x
+        tempStartingSize = tempView.frame.size.width
         
-        conditionStartingYValue = conditionText.frame.origin.y
-        conditionStartingXValue = conditionText.frame.origin.x
-        conditionStartingSize = conditionText.frame.size.width
+        iconStartingYValue = weatherIconView.frame.origin.y
+        iconStartingXValue = weatherIconView.frame.origin.x
+        iconStartingSize = weatherIconView.frame.size.width
+
+        locationStartingYValue = locationView.frame.origin.y
+        locationStartingXValue = locationView.frame.origin.x
+        locationStartingSize = locationView.frame.size.width
+        
+        conditionStartingYValue = weatherConditionView.frame.origin.y
+        conditionStartingXValue = weatherConditionView.frame.origin.x
+        conditionStartingSize = weatherConditionView.frame.size.width
         
         
         //link ViewController Vars to the ViewControllers in the Storyboard
@@ -143,109 +159,7 @@ class LocationViewController: UIViewController {
     }
     
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
-        
-        
-        let offset = scrollView.contentOffset.y
-        
-        
-        //when I scroll the list, degree image view changes the x position
-        //        degreeStaringXValue = original - offset
-        
-        
-        var nextXPosition = tempStartingXValue + offset
-        if nextXPosition > 280 { nextXPosition = 280 }
-        tempText.frame.origin = CGPoint(x: nextXPosition, y: tempText.frame.origin.y)
-        
-        
-        
-        
-        // This method is called as the user scrolls
-        
-        var nextYPosition = tempStartingYValue - offset
-        if nextYPosition < 30 { nextYPosition = 30 }
-        tempText.frame.origin = CGPoint(x: tempText.frame.origin.x, y: nextYPosition)
-        
-        
-        // This method is called as the user scrolls + size
-        
-        let change = 230 - offset
-        let total: CGFloat = 230
-        var percentOfTotal = change / total
-        if percentOfTotal < 0.40 { percentOfTotal = 0.40 }
-        //       if nextXPosition > 250 { nextScale = 1 }
-        
-        tempText.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-        
-        //////-------------------------
-        
-        var iconnextYPosition = iconStartingYValue - offset
-        if iconnextYPosition < 40 { iconnextYPosition = 40 }
-        
-        iconImageView.frame.origin = CGPoint(x: iconImageView.frame.origin.x, y: iconnextYPosition)
-        
-        
-        
-        var iconnextXPosition = iconStartingXValue - offset
-        if iconnextXPosition < 30 { iconnextXPosition = 30 }
-        iconImageView.frame.origin = CGPoint(x: iconnextXPosition, y: iconImageView.frame.origin.y)
-        
-        
-        // This method is called as the user scrolls + size
-        
-        
-        if percentOfTotal < 0.50 { percentOfTotal = 0.50 }
-        //       if nextXPosition > 250 { nextScale = 1 }
-        
-        iconImageView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-        
-        
-        //////-------------------------
-       
-        
-        var lonextYPosition = locationStartingYValue - offset
-        if lonextYPosition < 65 { lonextYPosition = 65 }
-        locationText.frame.origin = CGPoint(x: locationText.frame.origin.x, y: lonextYPosition)
-        
-        // This method is called as the user scrolls
-        
-     
-        var lonextXPosition = locationStartingXValue + offset
-        if lonextXPosition > 230 { lonextXPosition = 230 }
-        locationText.frame.origin = CGPoint(x: lonextXPosition, y: locationText.frame.origin.y)
-
-        if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
-        //       if nextXPosition > 250 { nextScale = 1 }
-        
-        locationText.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-        
-        //////-------------------------
-        
-        var conditionnextYPosition = conditionStartingYValue - offset
-        if conditionnextYPosition < 65 { conditionnextYPosition = 65 }
-        
-        conditionText.frame.origin = CGPoint(x: conditionText.frame.origin.x, y: conditionnextYPosition)
-        
-        
-        
-        var conditionnextXPosition = conditionStartingXValue - offset
-        if conditionnextXPosition < 30 { conditionnextXPosition = 30 }
-        conditionText.frame.origin = CGPoint(x: conditionnextXPosition, y: conditionText.frame.origin.y)
-        
-        
-        // This method is called as the user scrolls + size
-        
-        
-        if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
-        //       if nextXPosition > 250 { nextScale = 1 }
-        
-        conditionText.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-        
-        
-  
-    }
-
+   
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         
@@ -253,8 +167,112 @@ class LocationViewController: UIViewController {
             //print("Gesture began")
            containerViewOriginal = containerView.frame.origin
            self.contentView.frame.size = self.contentViewDown
+            //self.tempView.frame = self.tempViewDown
         } else if sender.state == .changed {
             containerView.frame.origin = CGPoint(x: containerViewOriginal.x, y: containerViewOriginal.y + translation.y)
+            
+            let offset = translation.y
+            
+            
+            //when I scroll the list, degree image view changes the x position
+            //        degreeStaringXValue = original - offset
+            
+            
+            var nextXPosition = tempStartingXValue + offset
+            if nextXPosition > 280 { nextXPosition = 280 }
+            tempView.frame.origin = CGPoint(x: nextXPosition, y: tempView.frame.origin.y)
+            
+            
+            
+            
+            // This method is called as the user scrolls
+            
+            var nextYPosition = tempStartingYValue - offset
+            if nextYPosition < 30 { nextYPosition = 30 }
+            tempView.frame.origin = CGPoint(x: tempView.frame.origin.x, y: nextYPosition)
+            
+            
+            // This method is called as the user scrolls + size
+            
+            let change = 230 - offset
+            let total: CGFloat = 230
+            var percentOfTotal = change / total
+            if percentOfTotal < 0.40 { percentOfTotal = 0.40 }
+            //       if nextXPosition > 250 { nextScale = 1 }
+            
+            tempView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
+            
+            //////-------------------------
+            
+            var iconnextYPosition = iconStartingYValue - offset
+            if iconnextYPosition < 40 { iconnextYPosition = 40 }
+            
+            weatherIconView.frame.origin = CGPoint(x: weatherIconView.frame.origin.x, y: iconnextYPosition)
+            
+            
+            
+            var iconnextXPosition = iconStartingXValue - offset
+            if iconnextXPosition < 30 { iconnextXPosition = 30 }
+            weatherIconView.frame.origin = CGPoint(x: iconnextXPosition, y: weatherIconView.frame.origin.y)
+            
+            
+            // This method is called as the user scrolls + size
+            
+            
+            if percentOfTotal < 0.50 { percentOfTotal = 0.50 }
+            //       if nextXPosition > 250 { nextScale = 1 }
+            
+            weatherIconView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
+            
+            
+            //////-------------------------
+            
+            
+            var lonextYPosition = locationStartingYValue - offset
+            if lonextYPosition < 65 { lonextYPosition = 65 }
+            locationView.frame.origin = CGPoint(x: locationView.frame.origin.x, y: lonextYPosition)
+            
+            // This method is called as the user scrolls
+            
+            
+            var lonextXPosition = locationStartingXValue + offset
+            if lonextXPosition > 230 { lonextXPosition = 230 }
+            locationView.frame.origin = CGPoint(x: lonextXPosition, y: locationView.frame.origin.y)
+            
+            if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
+            //       if nextXPosition > 250 { nextScale = 1 }
+            
+            locationView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
+            
+            //////-------------------------
+            
+            var conditionnextYPosition = conditionStartingYValue - offset
+            if conditionnextYPosition < 65 { conditionnextYPosition = 65 }
+            
+            weatherConditionView.frame.origin = CGPoint(x: weatherConditionView.frame.origin.x, y: conditionnextYPosition)
+            
+            
+            
+            var conditionnextXPosition = conditionStartingXValue - offset
+            if conditionnextXPosition < 30 { conditionnextXPosition = 30 }
+            weatherConditionView.frame.origin = CGPoint(x: conditionnextXPosition, y: weatherConditionView.frame.origin.y)
+            
+            
+            // This method is called as the user scrolls + size
+            
+            
+            if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
+            //       if nextXPosition > 250 { nextScale = 1 }
+            
+            weatherConditionView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
+            
+            
+            
+            
+            
+            
+            
+            
             print("Gesture is changing")
         } else if sender.state == .ended {
             var velocity = sender.velocity(in: view)
@@ -264,6 +282,7 @@ class LocationViewController: UIViewController {
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewUp
                                 self.contentView.frame.size = self.contentViewUp
+                                //self.tempView.frame = self.tempViewUp
                                 
                                 print(self.contentView.frame.size.height)
 
@@ -276,6 +295,7 @@ class LocationViewController: UIViewController {
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewDown
                                 self.contentView.frame.size = self.contentViewDown
+                                //self.tempView.frame = self.tempViewDown
                 }, completion: nil)
             }
             
@@ -283,6 +303,7 @@ class LocationViewController: UIViewController {
         }
         
     }
+    
     
 
     /*

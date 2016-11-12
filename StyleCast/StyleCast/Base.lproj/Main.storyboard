@@ -21,31 +21,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="72º" textAlignment="center" minimumFontSize="17" id="FMe-F2-FqH">
-                                <rect key="frame" x="183" y="115" width="169" height="76"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="13V-iO-kCD">
+                                <rect key="frame" x="283" y="573" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="85"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weather_icon" id="p2X-cy-9fZ">
-                                <rect key="frame" x="59" y="120" width="77" height="68"/>
+                                <state key="normal" image="camera_icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="72º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g8u-w1-Tav">
+                                <rect key="frame" x="187" y="118" width="172" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="San Francisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fob-rO-3xt">
+                                <rect key="frame" x="182" y="217" width="177" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eh0-hb-n41">
+                                <rect key="frame" x="16" y="217" width="154" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weather_icon" id="r5d-tw-Hjk">
+                                <rect key="frame" x="52" y="131" width="82" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="San Francisco" textAlignment="center" minimumFontSize="17" id="IM4-DR-1XW" userLabel="Location">
-                                <rect key="frame" x="183" y="197" width="169" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Partly Cloudy" textAlignment="center" minimumFontSize="17" id="LWd-UX-3XY" userLabel="Condition">
-                                <rect key="frame" x="16" y="197" width="159" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <view contentMode="scaleToFill" id="saQ-jq-0Gp" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="300" width="375" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,11 +115,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="13V-iO-kCD">
-                                <rect key="frame" x="283" y="573" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="camera_icon"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -124,16 +124,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="0hq-DW-kRo"/>
                     <connections>
-                        <outlet property="conditionText" destination="LWd-UX-3XY" id="bfz-yt-pvs"/>
                         <outlet property="containerView" destination="saQ-jq-0Gp" id="nCI-pK-sQI"/>
                         <outlet property="contentView" destination="hgi-tY-U1m" id="VzB-h6-lYX"/>
-                        <outlet property="iconImageView" destination="p2X-cy-9fZ" id="ec4-dI-VxZ"/>
-                        <outlet property="locationText" destination="IM4-DR-1XW" id="HvY-IK-976"/>
+                        <outlet property="locationView" destination="fob-rO-3xt" id="Ttb-zv-3Dm"/>
                         <outlet property="stylesButton" destination="i0A-9v-ZcT" id="FcB-9G-mzq"/>
                         <outlet property="tabBarContainerView" destination="281-y3-eyC" id="zy2-4T-lEN"/>
-                        <outlet property="tempText" destination="FMe-F2-FqH" id="TNm-mD-w6Z"/>
+                        <outlet property="tempView" destination="g8u-w1-Tav" id="l8r-Ev-DRs"/>
                         <outlet property="tipsButton" destination="H5N-TT-krl" id="d12-Gm-keY"/>
                         <outlet property="weatherButton" destination="gSh-2p-pgj" id="Dgn-MO-p7H"/>
+                        <outlet property="weatherConditionView" destination="eh0-hb-n41" id="2ud-Vm-dmq"/>
+                        <outlet property="weatherIconView" destination="r5d-tw-Hjk" id="Zp8-rI-sTX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
