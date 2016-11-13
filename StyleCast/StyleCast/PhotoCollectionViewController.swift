@@ -11,7 +11,8 @@ import UIKit
 
 
 class PhotoCollectionViewController: UICollectionViewController {
-    private let reuseIdentifier = "Cell"
+    //data source goes here
+    let reuseIdentifier = "Cell"
     
     var selectedImageView: UIImageView!
     var fadeTransition: FadeTransition!

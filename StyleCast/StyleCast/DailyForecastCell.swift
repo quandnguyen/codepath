@@ -1,18 +1,20 @@
 //
-//  TipsCell.swift
+//  DailyForecastCell.swift
 //  StyleCast
 //
-//  Created by Kim, YoungKyo (CONT) on 11/6/16.
+//  Created by Nguyen, Quan on 11/13/16.
 //  Copyright © 2016 Nguyen, Quan. All rights reserved.
 //
 
 import UIKit
 
-class TipsCell: UITableViewCell {
-    @IBOutlet weak var userNameView: UILabel!
-    @IBOutlet weak var messageView: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var timeStampView: UILabel!
+class DailyForecastCell: UITableViewCell {
+    @IBOutlet weak var weatherIconView: UIImageView!
+    @IBOutlet weak var dayView: UILabel!
+    @IBOutlet weak var lowTempView: UILabel!
+    @IBOutlet weak var highTempView: UILabel!
+    @IBOutlet weak var weatherConditionView: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

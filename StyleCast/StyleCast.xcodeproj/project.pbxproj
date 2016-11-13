@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A9282EDB1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9282EDA1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift */; };
+		A944853D1DD9078C00207718 /* DailyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A944853C1DD9078C00207718 /* DailyForecastCell.swift */; };
+		A944853F1DD90EE400207718 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A944853E1DD90EE400207718 /* HourlyForecastCell.swift */; };
 		A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */; };
 		A970D2E11DCD9AAD008F210C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2E01DCD9AAD008F210C /* ViewController.swift */; };
 		A970D2E41DCD9AAD008F210C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A970D2E21DCD9AAD008F210C /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		A9282EDA1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		A944853C1DD9078C00207718 /* DailyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyForecastCell.swift; path = StyleCast/DailyForecastCell.swift; sourceTree = "<group>"; };
+		A944853E1DD90EE400207718 /* HourlyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastCell.swift; sourceTree = "<group>"; };
 		A970D2DB1DCD9AAD008F210C /* StyleCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A970D2E01DCD9AAD008F210C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		A970D2D21DCD9AAD008F210C = {
 			isa = PBXGroup;
 			children = (
+				A944853C1DD9078C00207718 /* DailyForecastCell.swift */,
 				A970D2DD1DCD9AAD008F210C /* StyleCast */,
 				A970D2DC1DCD9AAD008F210C /* Products */,
 			);
@@ -107,6 +112,7 @@
 				D386AFDB1DCF15FD0030BE53 /* FeedViewController.swift */,
 				D386AFD91DCF15D30030BE53 /* MenuViewController.swift */,
 				D3C4CDF91DD040730043FBAD /* TipsCell.swift */,
+				A944853E1DD90EE400207718 /* HourlyForecastCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,7 +201,9 @@
 				A9D02CD91DD6F16B001E17D7 /* FadeTransition.swift in Sources */,
 				A9D02CD51DD6EE74001E17D7 /* PhotoDetailsViewController.swift in Sources */,
 				A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */,
+				A944853D1DD9078C00207718 /* DailyForecastCell.swift in Sources */,
 				A9D02CD81DD6F16B001E17D7 /* BaseTransition.swift in Sources */,
+				A944853F1DD90EE400207718 /* HourlyForecastCell.swift in Sources */,
 				D386AFDE1DCF163C0030BE53 /* HamburgerViewController.swift in Sources */,
 				D386AFDA1DCF15D30030BE53 /* MenuViewController.swift in Sources */,
 			);
