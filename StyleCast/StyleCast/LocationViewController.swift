@@ -27,40 +27,25 @@ class LocationViewController: UIViewController {
     var containerViewUp: CGPoint!
     var containerViewDown: CGPoint!
     
+    var contentViewOriginal: CGSize!
     var contentViewUp: CGSize!
     var contentViewDown: CGSize!
     
-//    var tempViewOriginal: CGRect!
-//    var tempViewUp: CGRect!
-//    var tempViewDown: CGRect!
-//    
-//    var locationViewOriginal: CGRect!
-//    var locationViewUp: CGRect!
-//    var locationViewDown: CGRect!
-//    
-//    var weatherIconViewOriginal: CGRect!
-//    var weatherIconViewUp: CGRect!
-//    var weatherIconViewDown: CGRect!
-//    
-//    var weatherConditionOriginal: CGRect!
-//    var weatherConditionUp: CGRect!
-//    var weatherConditionDown: CGRect!
+    var weatherIconViewOriginal: CGPoint!
+    var weatherIconViewUp: CGPoint!
+    var weatherIconViewDown: CGPoint!
     
-    var tempStartingYValue: CGFloat = 0
-    var tempStartingXValue: CGFloat = 0
-    var tempStartingSize: CGFloat = 0
+    var weatherConditionViewOriginal: CGPoint!
+    var weatherConditionViewUp: CGPoint!
+    var weatherConditionViewDown: CGPoint!
     
-    var iconStartingYValue: CGFloat = 0
-    var iconStartingXValue: CGFloat = 0
-    var iconStartingSize: CGFloat = 0
+    var tempViewOriginal: CGPoint!
+    var tempViewUp: CGPoint!
+    var tempViewDown: CGPoint!
     
-    var locationStartingYValue: CGFloat = 0
-    var locationStartingXValue: CGFloat = 0
-    var locationStartingSize: CGFloat = 0
-    
-    var conditionStartingYValue: CGFloat = 0
-    var conditionStartingXValue: CGFloat = 0
-    var conditionStartingSize: CGFloat = 0
+    var locationViewOriginal: CGPoint!
+    var locationViewUp: CGPoint!
+    var locationViewDown: CGPoint!
     
     
     //make an array to hold tab bar buttons
@@ -81,6 +66,7 @@ class LocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
 
         containerView.frame.size.height = (view.frame.size.height) - (view.frame.size.height/6)
@@ -93,24 +79,19 @@ class LocationViewController: UIViewController {
         contentViewDown = CGSize(width: view.frame.size.width, height: view.frame.size.height/2 - tabBarContainerView.frame.size.height)
         contentViewUp = CGSize(width: view.frame.size.width, height: containerView.frame.size.height - tabBarContainerView.frame.size.height)
         
+        tempViewDown = tempView.center
+        tempViewUp = CGPoint(x: view.frame.size.width - view.frame.size.width/4, y: view.frame.size.height/15)
+        
+        
+        locationViewDown = locationView.center
+        locationViewUp = CGPoint(x: view.frame.size.width - view.frame.size.width/4, y: tempViewUp.y + 30)
 
+        weatherIconViewDown = weatherIconView.center
+        weatherIconViewUp = CGPoint(x: view.frame.size.width/4, y: view.frame.size.height/15)
         
-        tempStartingYValue = tempView.frame.origin.y
-        tempStartingXValue = tempView.frame.origin.x
-        tempStartingSize = tempView.frame.size.width
-        
-        iconStartingYValue = weatherIconView.frame.origin.y
-        iconStartingXValue = weatherIconView.frame.origin.x
-        iconStartingSize = weatherIconView.frame.size.width
-
-        locationStartingYValue = locationView.frame.origin.y
-        locationStartingXValue = locationView.frame.origin.x
-        locationStartingSize = locationView.frame.size.width
-        
-        conditionStartingYValue = weatherConditionView.frame.origin.y
-        conditionStartingXValue = weatherConditionView.frame.origin.x
-        conditionStartingSize = weatherConditionView.frame.size.width
-        
+        weatherConditionViewDown = weatherConditionView.center
+        weatherConditionViewUp = CGPoint(x:view.frame.size.width/4, y: weatherIconViewUp.y + 30)
+ 
         
         //link ViewController Vars to the ViewControllers in the Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -164,125 +145,74 @@ class LocationViewController: UIViewController {
         let translation = sender.translation(in: view)
         
         if sender.state == .began {
-            //print("Gesture began")
-           containerViewOriginal = containerView.frame.origin
-           self.contentView.frame.size = self.contentViewDown
-            //self.tempView.frame = self.tempViewDown
+            containerViewOriginal = containerView.frame.origin
+            tempViewOriginal = tempView.frame.origin
+            locationViewOriginal = locationView.frame.origin
+            weatherIconViewOriginal = weatherIconView.frame.origin
+            weatherConditionViewOriginal = weatherConditionView.frame.origin
+            
+            
         } else if sender.state == .changed {
+
             containerView.frame.origin = CGPoint(x: containerViewOriginal.x, y: containerViewOriginal.y + translation.y)
             
-            let offset = translation.y
+            tempView.frame.origin = CGPoint(x: tempViewOriginal.x, y: tempViewOriginal.y + translation.y)
             
+            locationView.frame.origin = CGPoint(x: locationViewOriginal.x, y: locationViewOriginal.y + translation.y)
             
-            //when I scroll the list, degree image view changes the x position
-            //        degreeStaringXValue = original - offset
+            weatherIconView.frame.origin = CGPoint(x: weatherIconViewOriginal.x, y: weatherIconViewOriginal.y + translation.y)
             
-            
-            var nextXPosition = tempStartingXValue + offset
-            if nextXPosition > 280 { nextXPosition = 280 }
-            tempView.frame.origin = CGPoint(x: nextXPosition, y: tempView.frame.origin.y)
+            weatherConditionView.frame.origin = CGPoint(x:weatherConditionViewOriginal.x, y: weatherConditionViewOriginal.y + translation.y)
             
             
             
+            if tempView.frame.origin.y < 20 {tempView.frame.origin.y = 20}
+            if tempView.frame.origin.y > tempViewOriginal.y {tempView.frame.origin.y = tempViewOriginal.y}
             
-            // This method is called as the user scrolls
+            if locationView.frame.origin.y < 100 {locationView.frame.origin.y = 100}
+            if locationView.frame.origin.y > locationViewOriginal.y {locationView.frame.origin.y = locationViewOriginal.y}
             
-            var nextYPosition = tempStartingYValue - offset
-            if nextYPosition < 30 { nextYPosition = 30 }
-            tempView.frame.origin = CGPoint(x: tempView.frame.origin.x, y: nextYPosition)
+            if weatherIconView.frame.origin.y < 20 {weatherIconView.frame.origin.y = 20}
+            if weatherIconView.frame.origin.y > weatherIconViewOriginal.y {weatherIconView.frame.origin.y = weatherIconViewOriginal.y}
             
-            
-            // This method is called as the user scrolls + size
-            
-            let change = 230 - offset
-            let total: CGFloat = 230
-            var percentOfTotal = change / total
-            if percentOfTotal < 0.40 { percentOfTotal = 0.40 }
-            //       if nextXPosition > 250 { nextScale = 1 }
-            
-            tempView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-            
-            //////-------------------------
-            
-            var iconnextYPosition = iconStartingYValue - offset
-            if iconnextYPosition < 40 { iconnextYPosition = 40 }
-            
-            weatherIconView.frame.origin = CGPoint(x: weatherIconView.frame.origin.x, y: iconnextYPosition)
+            if weatherConditionView.frame.origin.y < 100 {weatherConditionView.frame.origin.y = 100}
+            if weatherConditionView.frame.origin.y > weatherConditionViewOriginal.y {weatherConditionView.frame.origin.y = locationViewOriginal.y}
             
             
-            
-            var iconnextXPosition = iconStartingXValue - offset
-            if iconnextXPosition < 30 { iconnextXPosition = 30 }
-            weatherIconView.frame.origin = CGPoint(x: iconnextXPosition, y: weatherIconView.frame.origin.y)
-            
-            
-            // This method is called as the user scrolls + size
-            
-            
-            if percentOfTotal < 0.50 { percentOfTotal = 0.50 }
-            //       if nextXPosition > 250 { nextScale = 1 }
-            
-            weatherIconView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-            
-            
-            //////-------------------------
-            
-            
-            var lonextYPosition = locationStartingYValue - offset
-            if lonextYPosition < 65 { lonextYPosition = 65 }
-            locationView.frame.origin = CGPoint(x: locationView.frame.origin.x, y: lonextYPosition)
-            
-            // This method is called as the user scrolls
-            
-            
-            var lonextXPosition = locationStartingXValue + offset
-            if lonextXPosition > 230 { lonextXPosition = 230 }
-            locationView.frame.origin = CGPoint(x: lonextXPosition, y: locationView.frame.origin.y)
-            
-            if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
-            //       if nextXPosition > 250 { nextScale = 1 }
-            
-            locationView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-            
-            //////-------------------------
-            
-            var conditionnextYPosition = conditionStartingYValue - offset
-            if conditionnextYPosition < 65 { conditionnextYPosition = 65 }
-            
-            weatherConditionView.frame.origin = CGPoint(x: weatherConditionView.frame.origin.x, y: conditionnextYPosition)
-            
-            
-            
-            var conditionnextXPosition = conditionStartingXValue - offset
-            if conditionnextXPosition < 30 { conditionnextXPosition = 30 }
-            weatherConditionView.frame.origin = CGPoint(x: conditionnextXPosition, y: weatherConditionView.frame.origin.y)
-            
-            
-            // This method is called as the user scrolls + size
-            
-            
-            if percentOfTotal < 0.80 { percentOfTotal = 0.80 }
-            //       if nextXPosition > 250 { nextScale = 1 }
-            
-            weatherConditionView.transform = CGAffineTransform(scaleX: percentOfTotal, y: percentOfTotal)
-            
-            
-            
-            
-            
-            
-            
+
+            var velocity = sender.velocity(in: view)
+            if velocity.y < 0 {
+                self.contentView.frame.size = self.contentViewUp
+                
+            }
             
             print("Gesture is changing")
+            
+            
+            
+            
+            
+            
         } else if sender.state == .ended {
             var velocity = sender.velocity(in: view)
             
-            if velocity.y < -10 {
+            if velocity.y < 0 {
                 UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 0.3, options:[] ,
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewUp
-                                self.contentView.frame.size = self.contentViewUp
-                                //self.tempView.frame = self.tempViewUp
+//                              self.contentView.frame.size = self.contentViewUp  << moved to sender.state == .changed to avoid flickering side effect with contentView is resizing
+                                
+                                self.tempView.center = self.tempViewUp
+                                self.tempView.transform = CGAffineTransform(scaleX:0.5, y:0.5)
+                                
+                                self.locationView.center = self.locationViewUp
+                                self.locationView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                                
+                                self.weatherIconView.center = self.weatherIconViewUp
+                                self.weatherIconView.transform = CGAffineTransform(scaleX:0.5, y:0.5)
+                                
+                                self.weatherConditionView.center = self.weatherConditionViewUp
+                                self.weatherConditionView.transform = CGAffineTransform(scaleX:0.8, y:0.8)
                                 
                                 print(self.contentView.frame.size.height)
 
@@ -291,15 +221,28 @@ class LocationViewController: UIViewController {
                 
                 
             } else {
+
                 UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 0.3, options:[] ,
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewDown
                                 self.contentView.frame.size = self.contentViewDown
-                                //self.tempView.frame = self.tempViewDown
+                                self.tempView.transform = CGAffineTransform(scaleX:1, y:1)
+                                
+                                self.tempView.center = self.tempViewDown
+                                self.locationView.center = self.locationViewDown
+                                self.locationView.transform = CGAffineTransform(scaleX:1, y:1)
+                                
+                                self.weatherIconView.center = self.weatherIconViewDown
+                                self.weatherIconView.transform = CGAffineTransform(scaleX:1, y:1)
+                                
+                                self.weatherConditionView.center = self.weatherConditionViewDown
+                                self.weatherConditionView.transform = CGAffineTransform(scaleX:1, y:1)
+
                 }, completion: nil)
             }
             
             print("Gesture ended")
+            
         }
         
     }
