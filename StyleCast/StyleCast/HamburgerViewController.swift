@@ -103,11 +103,13 @@ class HamburgerViewController: UIViewController {
             if velocity.x > 0 {
                 feedView.center = CGPoint(x: feedViewInitialCenter.x + translation.x, y: feedViewInitialCenter.y)
                 print("moved right")
-            }
-                
-            else if velocity.x < 0 {
-                feedView.center = CGPoint(x: feedViewRight.x + translation.x, y: feedViewRight.y)
-                print("moved left")
+            } else {
+                if feedViewInitialCenter == feedViewRight {
+                    feedView.center = CGPoint(x: feedViewRight.x + translation.x, y: feedViewRight.y)
+                    print("moved left")
+               } else {
+                    feedView.center = feedView.center
+                }
             }
             
         } else if sender.state == .ended {
