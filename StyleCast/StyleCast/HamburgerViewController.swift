@@ -14,12 +14,18 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var feedView: UIView!
     
     var feedViewInitialCenter: CGPoint!
+    var feedViewRight: CGPoint!
+    var feedViewLeft: CGPoint!
+    var offset: CGFloat!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        feedViewLeft = feedView.center
+        offset = 2 * (view.bounds.width/3)
+        feedViewRight = CGPoint(x: feedView.center.x + offset ,y: feedView.center.y)
         
-        feedViewInitialCenter = feedView.center
         // Create a reference to the the appropriate storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -28,11 +34,10 @@ class HamburgerViewController: UIViewController {
         
         
         // Instantiate the desired view controller from the storyboard using the view controllers identifier
-        // Cast is as the custom view controller type you created in order to access it's properties and methods
-        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
-        
-        
-        
+        // Cast it as the custom view controller type you created in order to access it's properties and methods
+        let feedViewController = storyboard.instantiateViewController(withIdentifier: "FeedNavigationViewController") as! UINavigationController
+        feedViewController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        feedViewController.navigationBar.tintColor = .white
         
         
         let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
@@ -86,104 +91,42 @@ class HamburgerViewController: UIViewController {
      */
     
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
-        
-        
-        
-        //let location = sender.location(in: view)
-        //let velocity = sender.velocity(in: view)
+
         let translation = sender.translation(in: feedView)
         let velocity = sender.velocity(in: feedView)
         
         
         if sender.state == .began {
-            
-            
-            
-            
-            //print("Gesture began")
+            feedViewInitialCenter = feedView.center
             
         } else if sender.state == .changed {
-            print("Gesture is changing")
-            
-            
             if velocity.x > 0 {
-                
-                print("x>0")
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    
-                    
-                    self.feedView.center.x = self.feedViewInitialCenter.x + translation.x
-                    //self.laterImageView.center.x = self.laterImageCenter.x
-                }, completion: {(finished: Bool) -> Void in
-                    
-                })
-                
-                
-                
-                
+                feedView.center = CGPoint(x: feedViewInitialCenter.x + translation.x, y: feedViewInitialCenter.y)
+                print("moved right")
             }
                 
             else if velocity.x < 0 {
-                
-                print("x<0")
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    print("this", self.feedView.center.x)
-                    print("initial", self.feedViewInitialCenter)
-                    self.feedView.center.x = self.feedViewInitialCenter.x + 275 + translation.x
-                    
-                    //self.laterImageView.center.x = self.laterImageCenter.x
-                }, completion: {(finished: Bool) -> Void in
-                    
-                })
+                feedView.center = CGPoint(x: feedViewRight.x + translation.x, y: feedViewRight.y)
+                print("moved left")
             }
             
         } else if sender.state == .ended {
-            //print("Gesture ended")
-            
-            print("ended")
-            
             if velocity.x > 0 {
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    
-                    print("it was here")
-                    print(self.feedView.center.x)
-                    
-                    self.feedView.center.x = self.feedViewInitialCenter.x + 275
-                    //self.laterImageView.center.x = self.laterImageCenter.x
-                }, completion: {(finished: Bool) -> Void in
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.feedView.center = self.feedViewRight
+                    }, completion: {(finished: Bool) -> Void in
                     
                 })
-                
-                
-                
-                
-                
             }
                 
             else if velocity.x < 0 {
                 
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.feedView.center.x = self.feedViewInitialCenter.x
-                    
-                    //self.laterImageView.center.x = self.laterImageCenter.x
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.feedView.center = self.feedViewLeft
                 }, completion: {(finished: Bool) -> Void in
                     
                 })
-                
-                
-                
-                
-                
             }
-            
-            
-            
         }
-        
     }
-
 }

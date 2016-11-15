@@ -23,6 +23,10 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var tempView: UILabel!
     @IBOutlet weak var locationView: UILabel!
     
+    @IBOutlet weak var navIndicatorView: UIView!
+    
+    @IBOutlet weak var cameraButton: UIButton!
+    
     var containerViewOriginal: CGPoint!
     var containerViewUp: CGPoint!
     var containerViewDown: CGPoint!
@@ -67,6 +71,7 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //styleNavigationBar()
 
 
         containerView.frame.size.height = (view.frame.size.height) - (view.frame.size.height/6)
@@ -111,7 +116,9 @@ class LocationViewController: UIViewController {
         buttons[selectedIndex].isSelected = true
         didPressTab(buttons[selectedIndex])
 
-
+        var frame = navIndicatorView.frame
+        frame.size.width = view.bounds.width / 3.0
+        navIndicatorView.frame = frame
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,6 +131,23 @@ class LocationViewController: UIViewController {
         let previousIndex = selectedIndex
         selectedIndex = sender.tag
         buttons[previousIndex].isSelected = false
+        
+        UIView.animate(withDuration: 0.3) {
+            var frame = self.navIndicatorView.frame
+            
+            switch sender.tag {
+            case 0:
+                //animate red view to x = 0
+                frame.origin.x = 0
+            case 1:
+                frame.origin.x = self.view.bounds.width / 3.0
+            case 2:
+                frame.origin.x = (self.view.bounds.width / 3.0) * 2.0
+            default: break
+            }
+            
+            self.navIndicatorView.frame = frame
+        }
         
         let previousVC = viewControllers[previousIndex]
         previousVC.willMove(toParentViewController: nil)
@@ -138,8 +162,7 @@ class LocationViewController: UIViewController {
         contentView.addSubview(vc.view)
         vc.didMove(toParentViewController: self)
     }
-    
-    
+ 
    
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
@@ -151,9 +174,8 @@ class LocationViewController: UIViewController {
             weatherIconViewOriginal = weatherIconView.frame.origin
             weatherConditionViewOriginal = weatherConditionView.frame.origin
             
-            
         } else if sender.state == .changed {
-
+            
             containerView.frame.origin = CGPoint(x: containerViewOriginal.x, y: containerViewOriginal.y + translation.y)
             
             tempView.frame.origin = CGPoint(x: tempViewOriginal.x, y: tempViewOriginal.y + translation.y)
@@ -163,7 +185,6 @@ class LocationViewController: UIViewController {
             weatherIconView.frame.origin = CGPoint(x: weatherIconViewOriginal.x, y: weatherIconViewOriginal.y + translation.y)
             
             weatherConditionView.frame.origin = CGPoint(x:weatherConditionViewOriginal.x, y: weatherConditionViewOriginal.y + translation.y)
-            
             
             
             if tempView.frame.origin.y < 20 {tempView.frame.origin.y = 20}
@@ -177,22 +198,14 @@ class LocationViewController: UIViewController {
             
             if weatherConditionView.frame.origin.y < 100 {weatherConditionView.frame.origin.y = 100}
             if weatherConditionView.frame.origin.y > weatherConditionViewOriginal.y {weatherConditionView.frame.origin.y = locationViewOriginal.y}
+       
             
-            
-
             var velocity = sender.velocity(in: view)
             if velocity.y < 0 {
                 self.contentView.frame.size = self.contentViewUp
                 
             }
-            
-            print("Gesture is changing")
-            
-            
-            
-            
-            
-            
+          
         } else if sender.state == .ended {
             var velocity = sender.velocity(in: view)
             
@@ -200,7 +213,7 @@ class LocationViewController: UIViewController {
                 UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 0.3, options:[] ,
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewUp
-//                              self.contentView.frame.size = self.contentViewUp  << moved to sender.state == .changed to avoid flickering side effect with contentView is resizing
+                                //                              self.contentView.frame.size = self.contentViewUp  << moved to sender.state == .changed to avoid flickering side effect with contentView is resizing
                                 
                                 self.tempView.center = self.tempViewUp
                                 self.tempView.transform = CGAffineTransform(scaleX:0.5, y:0.5)
@@ -215,13 +228,13 @@ class LocationViewController: UIViewController {
                                 self.weatherConditionView.transform = CGAffineTransform(scaleX:0.8, y:0.8)
                                 
                                 print(self.contentView.frame.size.height)
-
+                                
                 }, completion: nil)
                 
                 
                 
             } else {
-
+                
                 UIView.animate(withDuration:0.4, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 0.3, options:[] ,
                                animations: { () -> Void in
                                 self.containerView.frame.origin = self.containerViewDown
@@ -237,7 +250,7 @@ class LocationViewController: UIViewController {
                                 
                                 self.weatherConditionView.center = self.weatherConditionViewDown
                                 self.weatherConditionView.transform = CGAffineTransform(scaleX:1, y:1)
-
+                                
                 }, completion: nil)
             }
             
@@ -246,17 +259,15 @@ class LocationViewController: UIViewController {
         }
         
     }
-    
-    
-
+  
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

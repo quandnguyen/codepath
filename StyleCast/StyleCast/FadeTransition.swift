@@ -13,10 +13,12 @@ class FadeTransition: BaseTransition {
     var tempImageView: UIImageView!
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
-        let navigationController = fromViewController as! UINavigationController
+        let navigationController = navController!
         let locationViewController = navigationController.topViewController as! LocationViewController
         let stylesViewController = locationViewController.stylesViewController as! PhotoCollectionViewController
         
+
+
         let toViewController = toViewController as! PhotoDetailsViewController
         
         //stylesViewController.selectedImageView.isHidden = true

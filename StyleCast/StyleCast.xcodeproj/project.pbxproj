@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9282EDB1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9282EDA1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift */; };
+		A93D4EC91DDA6B6600419107 /* LocationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93D4EC81DDA6B6600419107 /* LocationViewCell.swift */; };
 		A944853D1DD9078C00207718 /* DailyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A944853C1DD9078C00207718 /* DailyForecastCell.swift */; };
 		A944853F1DD90EE400207718 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A944853E1DD90EE400207718 /* HourlyForecastCell.swift */; };
 		A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A970D2DE1DCD9AAD008F210C /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		A9282EDA1DD6F8BC0093AF33 /* PhotoCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		A93D4EC81DDA6B6600419107 /* LocationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewCell.swift; path = StyleCast/LocationViewCell.swift; sourceTree = "<group>"; };
 		A944853C1DD9078C00207718 /* DailyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyForecastCell.swift; path = StyleCast/DailyForecastCell.swift; sourceTree = "<group>"; };
 		A944853E1DD90EE400207718 /* HourlyForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecastCell.swift; sourceTree = "<group>"; };
 		A970D2DB1DCD9AAD008F210C /* StyleCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 		A970D2D21DCD9AAD008F210C = {
 			isa = PBXGroup;
 			children = (
+				A93D4EC81DDA6B6600419107 /* LocationViewCell.swift */,
 				A944853C1DD9078C00207718 /* DailyForecastCell.swift */,
 				A970D2DD1DCD9AAD008F210C /* StyleCast */,
 				A970D2DC1DCD9AAD008F210C /* Products */,
@@ -202,6 +205,7 @@
 				A9D02CD51DD6EE74001E17D7 /* PhotoDetailsViewController.swift in Sources */,
 				A970D2DF1DCD9AAD008F210C /* AppDelegate.swift in Sources */,
 				A944853D1DD9078C00207718 /* DailyForecastCell.swift in Sources */,
+				A93D4EC91DDA6B6600419107 /* LocationViewCell.swift in Sources */,
 				A9D02CD81DD6F16B001E17D7 /* BaseTransition.swift in Sources */,
 				A944853F1DD90EE400207718 /* HourlyForecastCell.swift in Sources */,
 				D386AFDE1DCF163C0030BE53 /* HamburgerViewController.swift in Sources */,

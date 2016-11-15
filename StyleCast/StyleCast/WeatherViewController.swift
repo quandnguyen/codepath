@@ -21,8 +21,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
-
-        // Do any additional setup after loading the view.
+        styleNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
